@@ -1,7 +1,7 @@
 /* Styling the Body element
         i.e. Color, Font, Alignment */
 h1 {
-    color: #A0E5FA; /* Code Ada Blue is #dcf2fe, this blue contrasts better*/
+    color: #a0e5fa; /* Code Ada Blue is #dcf2fe, this blue contrasts better*/
     font-size: 50px;
     text-shadow:
         /* Outline */
@@ -65,7 +65,7 @@ button and Checkbox */
 
 /* Styling Button */
 button {
-    background-color: #A0E5FA;
+    background-color: #a0e5fa;
     border: 1px solid #777;
     border-radius: 2px;
     font-family: inherit;
