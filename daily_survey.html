@@ -30,7 +30,7 @@
 
         .survey {
             background-color: #b2a2d2; /* Same color as Code Ada purple*/
-            font-family: "Andale Mono";
+            font-family: "Andale Mono",serif;
             text-align: center;
         }
 
@@ -100,11 +100,9 @@
         <form id="form">
             <!--Name-->
             <div class="form-control">
-                <label for="name">
-                    Enter name:
-                </label>
+                <label for="name">Enter name:</label>
                 <!-- multi-line text input control -->
-                <textarea name="name" id="name" placeholder="First Name Last Name"></textarea>
+                <textarea name="name" id="name" placeholder="First Name Last Name" autocomplete="First Name Last Name"></textarea>
             </div>
             <!--Email-->
             <div class="form-control">
@@ -112,84 +110,28 @@
                     Enter email:
                 </label>
                 <!-- multi-line text input control -->
-                <textarea name="email" id="email" placeholder="name@email.com"></textarea>
+                <textarea name="email" id="email" placeholder="name@email.com" autocomplete="name@gmail.com"></textarea>
             </div>
             <!--Fatigue Rating-->
             <div class="form-control">
-                <label>
-                    Rate your average fatigue during the last 24 hours from 0 (none) to 5 (high):
-                </label>
-
-                <!-- Input Type Radio Button -->
-                <label for="fatigue-0">
-                    <input type="radio" id="fatigue-0"
-                           name="fatigue">0
-                    </input>
-                </label>
-                <label for="fatigue-1">
-                    <input type="radio" id="fatigue-1"
-                           name="fatigue">1
-                    </input>
-                </label>
-                <label for="fatigue-2">
-                    <input type="radio" id="fatigue-2"
-                           name="fatigue">2
-                    </input>
-                </label>
-                <label for="fatigue-3">
-                    <input type="radio" id="fatigue-3"
-                           name="fatigue">3
-                    </input>
-                </label>
-                <label for="fatigue-4">
-                    <input type="radio" id="fatigue-4"
-                           name="fatigue">4
-                    </input>
-                </label>
-                <label for="fatigue-5">
-                    <input type="radio" id="fatigue-5"
-                           name="fatigue">5
-                    </input>
-                </label>
+                <label>Rate your average fatigue during the last 24 hours from 0 (none) to 5 (high):</label>
+                <label><input type="radio" name="fatigue" value="0">0</label>
+                <label><input type="radio" name="fatigue" value="1">1</label>
+                <label><input type="radio" name="fatigue" value="2">2</label>
+                <label><input type="radio" name="fatigue" value="3">3</label>
+                <label><input type="radio" name="fatigue" value="4">4</label>
+                <label><input type="radio" name="fatigue" value="5">5</label>
             </div>
 
             <!--Appetite Rating-->
             <div class="form-control">
-                <label>
-                    Rate your average appetite during the last 24 hours from 0 (none) to 5 (high):
-                </label>
-
-                <!-- Input Type Radio Button -->
-                <label for="appetite-0">
-                    <input type="radio" id="appetite-0"
-                           name="appetite">0
-                    </input>
-                </label>
-                <label for="appetite-1">
-                    <input type="radio" id="appetite-1"
-                           name="appetite">1
-                    </input>
-                </label>
-                <label for="appetite-2">
-                    <input type="radio" id="appetite-2"
-                           name="appetite">2
-                    </input>
-                </label>
-                <label for="appetite-3">
-                    <input type="radio" id="appetite-3"
-                           name="appetite">3
-                    </input>
-                </label>
-                <label for="appetite-4">
-                    <input type="radio" id="appetite-4"
-                           name="appetite">4
-                    </input>
-                </label>
-                <label for="appetite-5">
-                    <input type="radio" id="appetite-5"
-                           name="appetite">5
-                    </input>
-                </label>
+                <label>Rate your average appetite during the last 24 hours from 0 (none) to 5 (high):</label>
+                <label><input type="radio" name="appetite" value="0">0</label>
+                <label><input type="radio" name="appetite" value="1">1</label>
+                <label><input type="radio" name="appetite" value="2">2</label>
+                <label><input type="radio" name="appetite" value="3">3</label>
+                <label><input type="radio" name="appetite" value="4">4</label>
+                <label><input type="radio" name="appetite" value="5">5</label>
             </div>
 
             <!--Comments to doctor-->
@@ -239,8 +181,10 @@
             // Get values
             let name = getInputVal('name');
             let email = getInputVal('email');
+            let fatigue = getRadioVal('fatigue');
+            let appetite = getRadioVal('appetite');
 
-            saveMessage(name, email);
+            saveMessage(name, email, fatigue, appetite);
             document.getElementById('contactForm').reset();
         }
 
@@ -249,12 +193,24 @@
             return document.getElementById(id).value;
         }
 
+        function getRadioVal(name) {
+            let radios = document.getElementsByName(name);
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    return radios[i].value;
+                }
+            }
+            return null; // Return null if no radio button is selected
+        }
+
         // Save message to firebase
-        function saveMessage(name, email) {
+        function saveMessage(name, email, fatigue, appetite) {
             let newMessageRef = messagesRef.push();
             newMessageRef.set({
                 name: name,
                 email: email,
+                fatigue: fatigue,
+                appetite: appetite
 
             });
         }
