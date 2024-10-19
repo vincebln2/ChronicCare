@@ -5,6 +5,13 @@
           content="IE=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
+    <title>Daily Symptoms Survey</title>
+    <script src=
+                    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+
+
     <style>
         /* Styling the Body element
         i.e. Color, Font, Alignment */
@@ -93,6 +100,22 @@
     </h1>
     <div>
         <form id="form">
+            <!--Name-->
+            <div class="form-control">
+                <label for="name">
+                    Enter name:
+                </label>
+                <!-- multi-line text input control -->
+                <textarea name="name" id="name" placeholder="First Name Last Name"></textarea>
+            </div>
+            <!--Email-->
+            <div class="form-control">
+                <label for="email">
+                    Enter email:
+                </label>
+                <!-- multi-line text input control -->
+                <textarea name="email" id="email" placeholder="name@email.com"></textarea>
+            </div>
             <!--Fatigue Rating-->
             <div class="form-control">
                 <label>
@@ -186,5 +209,55 @@
             </button>
         </form>
     </div>
+
+    <script src=
+                    "https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
+    </script>
+
+    <script>
+        let firebaseConfig = {
+            apiKey: "AIzaSyAbMZqwYT6jLlK9gHcqq9IHpuN5R8JrSIA",
+            authDomain: "chroniccare-bb97e.firebaseapp.com",
+            projectId: "chroniccare-bb97e",
+            storageBucket: "chroniccare-bb97e.appspot.com",
+            messagingSenderId: "936032624692",
+            appId: "1:936032624692:web:7aabe39990bdf428ab6a61",
+            measurementId: "G-0TEBG69FJQ"
+
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        let messagesRef = firebase.database()
+            .ref('Collected Data');
+
+        document.getElementById('form')
+            .addEventListener('submit', submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+
+            // Get values
+            let name = getInputVal('name');
+            let email = getInputVal('email');
+
+            saveMessage(name, email);
+            document.getElementById('contactForm').reset();
+        }
+
+        // Function to get form values
+        function getInputVal(id) {
+            return document.getElementById(id).value;
+        }
+
+        // Save message to firebase
+        function saveMessage(name, email) {
+            let newMessageRef = messagesRef.push();
+            newMessageRef.set({
+                name: name,
+                email: email,
+            });
+        }
+    </script>
 
 </body>
