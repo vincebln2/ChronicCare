@@ -21,6 +21,7 @@
             <a href="home_page.html">Home</a>
             <a href="patient_side.html">Sign In</a>
             <a href="daily_survey.html">Daily Check In</a>
+            <a href="response_from_doctor.html">Response From Doctor</a>
         </div>
         <button id="signInButton">Create Account / Sign In</button>
         <button id="signOutButton">Sign Out</button>
@@ -32,12 +33,9 @@
     </form>
 
 </div>
-<script src=
-                "daily_survey_script.js">
-
-</script>
+<script src="firebase_config.js"></script>
 <script type="module" src=
-        "google_auth.js">
+        "patient_side_script.js">
 </script>
 <script>
     signInButton.addEventListener('click', userSignIn);

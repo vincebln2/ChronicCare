@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>home_page</title>
+    <script src=
+                    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+    <link rel="stylesheet" href="main_style.css">
+</head>
+<img src="logo.jpg" alt="ChroniCare"> <!--logo-->
+<body class="survey">
+<div>
+    <form id="form">
+        <!--navbar-->
+        <div class="navbar">
+            <a href="patient_home.html">Home</a>
+            <a href="patient_side.html">Patient Sign In</a>
+            <a href="daily_survey.html">Daily Check In</a>
+        </div>
+        <div>
+            <h2>Doctor Response Viewer</h2>
+            <!--patient data goes here-->
+            <p>Response on 10/20/24:</p>
+            <p>Fatigue: 4/5</p>
+            <p>Appetite: 0/5</p>
+            <p>Comment: "I have had really bad cramps today. I think I have a flare up."</p>
+            <p>Doctor Reply: "You should take your anti-inflammatory medicine."</p>
+
+
+            <div class="form-control">
+                <label for="comment">
+                    Optional Reply to Doctor:
+                </label>
+                <!-- multi-line text input control -->
+                <textarea name="comment" id="comment" placeholder="Enter your response here"></textarea>
+                <button type="submit" value="submit">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script src="firebase_config.js"></script>
+</body>
