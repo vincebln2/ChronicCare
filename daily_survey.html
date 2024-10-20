@@ -15,71 +15,71 @@
 </head>
 
 <body class="survey">
-    <h1>
-        Daily Symptoms Survey
-    </h1>
-    <div>
-        <form id="form">
-            <!--Name-->
-            <div class="form-control">
-                <label for="name">Enter name:</label>
-                <!-- multi-line text input control -->
-                <textarea name="name" id="name" placeholder="First Name Last Name" autocomplete="First Name Last Name"></textarea>
-            </div>
-            <!--Email-->
-            <div class="form-control">
-                <label for="email">
-                    Enter email:
-                </label>
-                <!-- multi-line text input control -->
-                <textarea name="email" id="email" placeholder="name@email.com" autocomplete="name@gmail.com"></textarea>
-            </div>
-            <!--Fatigue Rating-->
-            <div class="form-control">
-                <label>Rate your average fatigue during the last 24 hours from 0 (none) to 5 (high):</label>
-                <label><input type="radio" name="fatigue" value="0">0</label>
-                <label><input type="radio" name="fatigue" value="1">1</label>
-                <label><input type="radio" name="fatigue" value="2">2</label>
-                <label><input type="radio" name="fatigue" value="3">3</label>
-                <label><input type="radio" name="fatigue" value="4">4</label>
-                <label><input type="radio" name="fatigue" value="5">5</label>
-            </div>
+<h1>
+    Daily Symptoms Survey
+</h1>
+<div>
+    <form id="form">
+        <!--Name-->
+        <div class="form-control">
+            <label for="name">Enter name:</label>
+            <!-- multi-line text input control -->
+            <textarea name="name" id="name" placeholder="First Name Last Name" autocomplete="First Name Last Name"></textarea>
+        </div>
+        <!--Email-->
+        <div class="form-control">
+            <label for="email">
+                Enter email:
+            </label>
+            <!-- multi-line text input control -->
+            <textarea name="email" id="email" placeholder="name@email.com" autocomplete="name@gmail.com"></textarea>
+        </div>
+        <!--Fatigue Rating-->
+        <div class="form-control">
+            <label>Rate your average fatigue during the last 24 hours from 0 (none) to 5 (high):</label>
+            <label><input type="radio" name="fatigue" value="0">0</label>
+            <label><input type="radio" name="fatigue" value="1">1</label>
+            <label><input type="radio" name="fatigue" value="2">2</label>
+            <label><input type="radio" name="fatigue" value="3">3</label>
+            <label><input type="radio" name="fatigue" value="4">4</label>
+            <label><input type="radio" name="fatigue" value="5">5</label>
+        </div>
 
-            <!--Appetite Rating-->
-            <div class="form-control">
-                <label>Rate your average appetite during the last 24 hours from 0 (none) to 5 (high):</label>
-                <label><input type="radio" name="appetite" value="0">0</label>
-                <label><input type="radio" name="appetite" value="1">1</label>
-                <label><input type="radio" name="appetite" value="2">2</label>
-                <label><input type="radio" name="appetite" value="3">3</label>
-                <label><input type="radio" name="appetite" value="4">4</label>
-                <label><input type="radio" name="appetite" value="5">5</label>
-            </div>
+        <!--Appetite Rating-->
+        <div class="form-control">
+            <label>Rate your average appetite during the last 24 hours from 0 (none) to 5 (high):</label>
+            <label><input type="radio" name="appetite" value="0">0</label>
+            <label><input type="radio" name="appetite" value="1">1</label>
+            <label><input type="radio" name="appetite" value="2">2</label>
+            <label><input type="radio" name="appetite" value="3">3</label>
+            <label><input type="radio" name="appetite" value="4">4</label>
+            <label><input type="radio" name="appetite" value="5">5</label>
+        </div>
 
-            <!--Comments to doctor-->
-            <div class="form-control">
-                <label for="comment">
-                    Enter any concerns or questions you would like to tell or ask your doctor:
-                </label>
-                <!-- multi-line text input control -->
-                <textarea name="comment" id="comment" placeholder="Enter your response here"></textarea>
-            </div>
+        <!--Comments to doctor-->
+        <div class="form-control">
+            <label for="comment">
+                Enter any concerns or questions you would like to tell or ask your doctor:
+            </label>
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment" placeholder="Enter your response here"></textarea>
+        </div>
 
-            <!-- Multi-line Text Input Control -->
-            <button type="submit" value="submit">
-                Submit
-            </button>
-        </form>
-    </div>
+        <!-- Multi-line Text Input Control -->
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+</div>
 
-    <script src=
-                    "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js">
+<script src=
+                "https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
 
-    </script>
+</script>
 
-    <script src=
-                    "daily_survey_script.js">
+<script src=
+                "daily_survey_script.js">
 
-    </script>
+</script>
 
 </body>
