@@ -1,25 +1,36 @@
 /* Styling the Body element
         i.e. Color, Font, Alignment */
+img {
+    width: 600px;
+}
+
 h1 {
     color: #a0e5fa; /* Code Ada Blue is #dcf2fe, this blue contrasts better*/
-    font-size: 50px;
-    text-shadow:
-        /* Outline */
-            -1px -1px 0 #000000,
-            1px -1px 0 #000000,
-            -1px 1px 0 #000000,
-            1px 1px 0 #000000,
-            -2px 0 0 #000000,
-            2px 0 0 #000000,
-            0 2px 0 #000000,
-            0 -2px 0 #000000;
+    font-size: 20px;
+}
+h3 {
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+ul {
+    text-align: left;
 }
 .navbar{ /* navbar formatting*/
     background-color: #a0e5fa;
     overflow: hidden;
     padding: 20px;
-    max-width: 500px; /* same width as form */
+    max-width: 700px; /* same width as form */
     margin: 0 auto; /* center the navbar */
+}
+
+#userInfo {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
 }
 
 .navbar a{
@@ -47,7 +58,7 @@ h1 {
 /* Styling the Form (Color, Padding, Shadow) */
 form {
     background-color: #fff;
-    max-width: 500px;
+    max-width: 700px;
     margin: 50px auto;
     padding: 30px 20px;
     box-shadow: 2px 5px 10px rgba(220, 242, 254, 1);
