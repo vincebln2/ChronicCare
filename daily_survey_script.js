@@ -26,20 +26,21 @@ function displayUserInfo() {
 function submitForm(e) {
     e.preventDefault();
 
-    // get inputs from survey
-    let user = firebase.auth().currentUser;
+    // Retrieve user information from cookies
+    const userId = getCookie('userId');
     let fatigue = getRadioVal('fatigue');
     let appetite = getRadioVal('appetite');
     let comment = getInputVal('comment');
 
-    if (user) {
-        // Save message with user ID
-        saveMessage(user.uid, name, email, fatigue, appetite, comment);
-        form.reset(); // clear form on website after pressing submit
+    if (userId) {
+        // Save message with user ID from the cookie
+        saveMessage(userId, fatigue, appetite, comment);
+        document.getElementById('form').reset(); // Clear form on website after pressing submit
     } else {
         alert("User not authenticated. Please log in.");
     }
 }
+
 
 // Function to get form values
 function getInputVal(id) {
