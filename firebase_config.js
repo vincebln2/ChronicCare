@@ -15,11 +15,14 @@ firebase.initializeApp(firebaseConfig);
 let messagesRef = firebase.database()
     .ref('Collected Data');
 
-function saveMessage(name, email, fatigue, appetite, comment) {
+const database = firebase.database();
+const auth = firebase.auth();
+
+
+function saveMessage(user, fatigue, appetite, comment) {
     let newMessageRef = messagesRef.push();
     newMessageRef.set({
-        name: name,
-        email: email,
+        user: user,
         fatigue: fatigue,
         appetite: appetite,
         comment: comment

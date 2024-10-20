@@ -31,13 +31,21 @@ message.style.display = "none";
 
 // User sign-in
 const userSignIn = async (event) => {
-    event.preventDefault();  // Prevent form submission
+    event.preventDefault(); // Prevent form submission
 
     try {
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
-        console.log("Signed in user:", user);
-        // Optionally display user information
+
+        // Get the user's UID
+        const userId = user.uid;
+
+        // Set cookies for user information
+        document.cookie = `userId=${userId}; path=/;`;
+        document.cookie = `userName=${user.displayName}; path=/;`;
+        document.cookie = `userEmail=${user.email}; path=/;`;
+
+        // Display user information
         userName.innerHTML = user.displayName;
         userEmail.innerHTML = user.email;
     } catch (error) {
@@ -46,11 +54,16 @@ const userSignIn = async (event) => {
     }
 };
 
+
 // User sign-out
 const userSignOut = async (event) => {
     event.preventDefault();  // Prevent form submission
     try {
         await signOut(auth);
+        // Clear cookies by setting their expiry date in the past
+        document.cookie = "userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "userName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "userEmail=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         alert("You have signed out successfully!");
     } catch (error) {
         console.error("Sign-out error:", error);

@@ -13,32 +13,32 @@
     <link rel="stylesheet" href="main_style.css">
 </head>
 <body class="survey">
-    <h1>
-        Chronic Care Login Page
-    </h1>
-    <div>
-        <form id="form">
-            <button id="signInButton">Create Account / Sign In</button>
-            <button id="signOutButton">Sign Out</button>
+<h1>
+    Chronic Care Login Page
+</h1>
+<div>
+    <form id="form">
+        <button id="signInButton">Create Account / Sign In</button>
+        <button id="signOutButton">Sign Out</button>
 
-            <div id="message">
-                <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
-            </div>
+        <div id="message">
+            <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+        </div>
 
-        </form>
+    </form>
 
-    </div>
-    <script src=
-                    "daily_survey_script.js">
+</div>
+<script src=
+                "daily_survey_script.js">
 
-    </script>
-    <script type="module" src=
-                    "google_auth.js">
-    </script>
-    <script>
-        signInButton.addEventListener('click', userSignIn);
-        signOutButton.addEventListener('click', userSignOut);
-    </script>
+</script>
+<script type="module" src=
+        "google_auth.js">
+</script>
+<script>
+    signInButton.addEventListener('click', userSignIn);
+    signOutButton.addEventListener('click', userSignOut);
+</script>
 
 
 </body>
