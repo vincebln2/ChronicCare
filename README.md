@@ -1,3 +1,4 @@
+Code Ada Hackathon project
 # ChronicCare
 ChronicCare is a tool that enhances ease of communication between doctors and patients with chronic conditions. 
 
