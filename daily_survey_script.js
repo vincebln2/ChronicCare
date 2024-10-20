@@ -9,7 +9,6 @@ let firebaseConfig = {
     measurementId: "G-0TEBG69FJQ"
 
 };
-
 firebase.initializeApp(firebaseConfig);
 
 let messagesRef = firebase.database()
@@ -26,9 +25,10 @@ function submitForm(e) {
     let email = getInputVal('email');
     let fatigue = getRadioVal('fatigue');
     let appetite = getRadioVal('appetite');
+    let comment = getInputVal('comment');
 
-    saveMessage(name, email, fatigue, appetite);
-    document.getElementById('contactForm').reset();
+    saveMessage(name, email, fatigue, appetite, comment);
+    form.reset(); // clear form on website after pressing submit
 }
 
 // Function to get form values
@@ -43,17 +43,18 @@ function getRadioVal(name) {
             return radios[i].value;
         }
     }
-    return null; // Return null if no radio button is selected
+    return null; // return null if no radio button is selected
 }
 
-// Save message to firebase
-function saveMessage(name, email, fatigue, appetite) {
+// save message to firebase
+function saveMessage(name, email, fatigue, appetite, comment) {
     let newMessageRef = messagesRef.push();
     newMessageRef.set({
         name: name,
         email: email,
         fatigue: fatigue,
-        appetite: appetite
+        appetite: appetite,
+        comment: comment
 
     });
 }

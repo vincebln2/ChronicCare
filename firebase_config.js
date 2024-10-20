@@ -10,13 +10,21 @@ let firebaseConfig = {
     measurementId: "G-0TEBG69FJQ"
 
 };
+firebase.initializeApp(firebaseConfig);
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+let messagesRef = firebase.database()
+    .ref('Collected Data');
 
-// Initialize Firebase services
-const auth = getAuth(app);
-const database = getDatabase(app);
+function saveMessage(name, email, fatigue, appetite, comment) {
+    let newMessageRef = messagesRef.push();
+    newMessageRef.set({
+        name: name,
+        email: email,
+        fatigue: fatigue,
+        appetite: appetite,
+        comment: comment
 
-// Export the Firebase services for use in other files
-export { auth, database };
+    });
+}
+
+window.saveMessage = saveMessage;
