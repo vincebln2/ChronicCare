@@ -23,7 +23,7 @@ ul {
     background-color: #a0e5fa;
     overflow: hidden;
     padding: 15px;
-    max-width: 700px; /* same width as form */
+    max-width: 900px; /* same width as form */
     margin: 0 auto; /* center the navbar */
 }
 
@@ -58,7 +58,7 @@ ul {
 /* Styling the Form (Color, Padding, Shadow) */
 form {
     background-color: #fff;
-    max-width: 700px;
+    max-width: 900px;
     margin: 50px auto;
     padding: 30px 20px;
     box-shadow: 2px 5px 10px rgba(220, 242, 254, 1);
